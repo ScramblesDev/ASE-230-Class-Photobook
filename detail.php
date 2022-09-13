@@ -1,3 +1,52 @@
+<?php
+    $students = [
+        [
+            'name' => 'Seth Beesley',
+            'year' => '3',
+            'picture' => 'https://media-exp1.licdn.com/dms/image/C5603AQHZUFNBdtTHnQ/profile-displayphoto-shrink_200_200/0/1657853623221?e=1667433600&v=beta&t=wPbXk1nDxBycVUh2Gcmfhw_YioMPFLr4x5egJ5u6P2o',
+            'description' => 'Hello! My name is Seth Beesley. I am a junior at Northern Kentucky University, and my major is Applied Software Engineering, and my minor is Electronic Media and Broadcasting.',
+            'quote' => 'Nothing is original.',
+            'funfact' => 'I like to make video games.',
+            'dreamjob' => 'Game Developer',
+            'dreamcompany' => 'Sega',
+            'email' => 'beesleys1@nku.edu'
+        ],
+        [
+            'name' => 'Trevor Erwin',
+            'year' => '1',
+            'picture' => 'https://media-exp1.licdn.com/dms/image/C5603AQHzKFBFPeE_nw/profile-displayphoto-shrink_200_200/0/1625721961776?e=1668643200&v=beta&t=U-TIrrAa_J1h0A7rNjrJ19bTrHjsOueL7BJXq8XV26w',
+            'description' => 'Hey. My name is trevor, and I am a freshman at NKU. My major is Business, and my minor is Finance.',
+            'quote' => 'Do what you want in life.',
+            'funfact' => 'I like long walks on the beach.',
+            'dreamjob' => 'Accountant',
+            'dreamcompany' => 'Proctor and Gamble',
+            'email' => 'trevor@gmail.com'
+        ],
+        [
+            'name' => 'Alex Nguyen',
+            'year' => '2',
+            'picture' => 'https://media-exp1.licdn.com/dms/image/C5603AQE6LnQO5uam4w/profile-displayphoto-shrink_200_200/0/1604636270628?e=1668643200&v=beta&t=A7X53Qh-d9akCZxvge2a9VWEwppVb-36lLPXOBIZoRI',
+            'description' => 'Salutations! My name is Alex and I am a sophomore at NKU. My major is Biology.',
+            'quote' => 'Sometimes it be not like it do but is.',
+            'funfact' => 'I have 5 cats.',
+            'dreamjob' => 'Biologist',
+            'dreamcompany' => 'EcoSystems',
+            'email' => 'alex@gmail.com'
+        ],
+        [
+            'name' => 'David Rodriguez',
+            'year' => '4',
+            'picture' => 'https://media-exp1.licdn.com/dms/image/C5603AQFnFWwkD1d2Pw/profile-displayphoto-shrink_200_200/0/1517251281944?e=1668643200&v=beta&t=9CCRKo87tqBLfgo0xhz9xAqPHGj4JJn2lhOZ9zSgRJs',
+            'description' => 'Hi. I am David, and this is my senior year at Northern Kentucky University. I am doing art, and my minor is computer science.',
+            'quote' => 'money opens up opportunities, but is not happiness itself.',
+            'funfact' => 'i have 6 siblings.',
+            'dreamjob' => 'artist',
+            'dreamcompany' => 'BH Photo Video',
+            'email' => 'david@gmail.com'
+        ]
+    ];
+?>
+
 <html lang="en">
 	<!-- https://www.bootdey.com/snippets/view/team-user-resume#html -->
 		<meta charset="utf-8">
@@ -9,16 +58,16 @@
 		<link rel="stylesheet" href="assets/css/detail.css" />
 		<title><?php echo "ASE 230 - Seth Beesley"; ?></title>
 		<div class="container text-center mb-5">
-			<h1><?php echo "This is ASE 230 - Seth Beesley"; ?></h1>
+			<h1>This is ASE 230 - <?= $students[$_GET['id']]['name'] ?></h1>
 		</div>
 		<div class="container">
     <div class="row">
       <div class="col-lg-5 col-md-6">
         <div class="mb-2">
-          <img class="w-100" src="https://media-exp1.licdn.com/dms/image/C5603AQHZUFNBdtTHnQ/profile-displayphoto-shrink_200_200/0/1657853623221?e=1667433600&v=beta&t=wPbXk1nDxBycVUh2Gcmfhw_YioMPFLr4x5egJ5u6P2o" alt="">
+          <img class="w-100" src="<?= $students[$_GET['id']]['picture'] ?>" alt="">
         </div>
         <div class="mb-2 d-flex">
-          <h4 class="font-weight-normal"><?php echo "Seth Beesley"; ?></h4>
+          <h4 class="font-weight-normal"><?= $students[$_GET['id']]['name'] ?></h4>
           <div class="social d-flex ml-auto">
             <p class="pr-2 font-weight-normal"><?php echo "Follow on:"; ?></p>
             <a href="#" class="text-muted mr-1">
@@ -36,24 +85,24 @@
           <ul class="list-unstyled">
             <li class="media">
               <span class="w-25 text-black font-weight-normal">Dream profession:</span>
-              <label class="media-body"><?php echo "Web Developer"; ?></label>
+              <label class="media-body"><?= $students[$_GET['id']]['dreamjob'] ?></label>
             </li>
             <li class="media">
               <span class="w-25 text-black font-weight-normal">Dream company: </span>
-              <label class="media-body"><?php echo "Google"; ?></label>
+              <label class="media-body"><?= $students[$_GET['id']]['dreamcompany'] ?></label>
             </li>
             <li class="media">
               <span class="w-25 text-black font-weight-normal">Email: </span>
-              <label class="media-body"><?php echo "beesleys1@nku.edu" ?></label>
+              <label class="media-body"><?= $students[$_GET['id']]['email'] ?></label>
             </li>
           </ul>
         </div>
       </div>
       <div class="col-lg-7 col-md-6 pl-xl-3">
         <h5 class="font-weight-normal">Short intro</h5>
-        <p><?php echo "Hello! my name is Seth Beesley. I'm a junior at Northern Kentucky University, and my major is Applied Software Engineering, and my minor is Electronic Media and Broadcasting. "; ?></p>
+        <p><?= $students[$_GET['id']]['description'] ?></p>
         <div class="my-2 bg-light p-2">
-          <p class="font-italic mb-0"><?php echo "Nothing is original. Steal from anywhere that resonates with inspiration or fuels your imagination. Devour old films, new films, music, books, paintings, photographs, poems, dreams, random conversations, architecture, bridges, street signs, trees, clouds, bodies of water, light and shadows. Select only things to steal from that speak directly to your soul. If you do this, your work (and theft) will be authentic."; ?></p>
+          <p class="font-italic mb-0"><?= $students[$_GET['id']]['quote'] ?></p>
         </div>
         <div class="mb-2 mt-2 pt-1">
           <h5 class="font-weight-normal">Top skills</h5>
@@ -83,7 +132,7 @@
           </div>
         </div>
         <h5 class="font-weight-normal">Fun fact</h5>
-        <p><?php echo "I enjoy playing with synthesizers."?></p>
+        <p><?= $students[$_GET['id']]['funfact'] ?></p>
         
       <a href="index.php">Back to photobook</a>
 
